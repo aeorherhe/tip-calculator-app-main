@@ -31,6 +31,7 @@ tipBtns.forEach(function (tipBtn) {
       }
     });
     tipBtn.classList.add("selected");
+    custom.value = "";
     calcTip();
   });
 
@@ -38,16 +39,14 @@ tipBtns.forEach(function (tipBtn) {
     tipBtn.classList.remove("selected");
     customTip = Number(custom.value);
     customTip = customTip / 100;
-
-    if (customTip > 0) {
-      calcTip();
-    }
+    validateInput(custom, 1);
+    calcTip();
   });
 });
 
 persons.addEventListener("input", () => {
   totalPersons = Number(persons.value);
-  validateInput(persons, 1);
+  validateInput(persons, 2);
   calcTip();
 });
 

@@ -28,37 +28,36 @@
 }
 
 body {
+  background-color: var(--Light-grayish-cyan);
   display: grid;
   font-family: "Space Mono", "Open Sans", Arial, Helvetica, sans-serif;
   height: 100vh;
-  margin: 0;
   place-items: center;
-  background-color: var(--Light-grayish-cyan);
 }
 
 .container {
   background-color: var(--Light-grayish-cyan);
+  margin: 1rem 0 10rem;
   padding-top: 2rem;
-  margin: 1rem 0;
 }
 
 .logo {
-  margin: 2rem auto;
   display: block;
+  margin: 2rem auto;
 }
 
 .sections {
-  transition: var(--transition);
-  padding: 1rem;
-  border-radius: 1.3rem 1.3rem 0 0;
   background: var(--White);
+  border-radius: 1.3rem 1.3rem 0 0;
+  padding: 1rem;
+  transition: var(--transition);
 }
 
 .tips-section * {
   display: block;
 }
 
-.form-group {
+.form-group:not(.form-group.custom-form) {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -67,51 +66,47 @@ body {
 }
 
 .input {
-  outline: none;
   background: var(--Very-light-grayish-cyan);
   border-radius: 0.5rem;
   border: none;
+  cursor: pointer;
+  font-family: "Space Mono";
   font-size: 1.5rem;
+  outline: none;
   padding: 0.5rem 1rem;
   text-align: right;
-  font-family: "Space Mono";
-  cursor: pointer;
 }
 
 .icon-dollar,
 .icon-person {
-  width: 1rem;
-  position: absolute;
   bottom: 0.7rem;
   left: 1rem;
+  position: absolute;
+  width: 1rem;
 }
 
 .tips {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
   margin: 1rem 0 2rem;
 }
 
 .btn {
-  font-weight: 700;
-  padding: 0.8rem 3rem;
-  border: none;
-  outline: none;
+  align-items: center;
   background-color: var(--Very-dark-cyan);
   border-radius: 0.5rem;
+  border: none;
   color: var(--White);
-  font-size: 1.2rem;
-  font-family: "Space Mono";
   cursor: pointer;
   display: flex;
-  align-items: center;
+  font-family: "Space Mono";
+  font-size: 1.2rem;
+  font-weight: 700;
   justify-content: center;
+  outline: none;
+  padding: 0.8rem 3rem;
 }
-
-/* .btn:nth-of-type(3) {
-  background-color: var(--Strong-cyan);
-} */
 
 /* selected tip percent */
 .selected.btn {
@@ -122,11 +117,11 @@ body {
 .custom-btn {
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Very-dark-cyan);
+  font-size: 1.5rem;
   letter-spacing: 0.1rem;
   padding: 0.5rem;
   padding-right: 1rem;
   text-align: right;
-  font-size: 1.5rem;
   width: 100%;
 }
 
@@ -138,17 +133,24 @@ body {
   color: var(--Very-dark-cyan);
 }
 
-.persons-label,
-.bill-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.custom-label {
+  position: relative;
 }
 
-.invalid.bill,
-.invalid.bill:focus,
-.invalid.persons,
-.invalid.persons:focus {
+.custom-label .error-msg {
+  position: absolute;
+  right: 0;
+  top: 0.3rem;
+}
+
+.persons-label,
+.bill-label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group :is(.invalid, .invalid:focus) {
   outline: 1.5px solid #f12144;
 }
 
@@ -160,22 +162,22 @@ body {
 /* reset section */
 .reset-section {
   background: var(--Very-dark-cyan);
-  margin: 2rem 0;
-  padding: 1rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
 }
 
 .pricing {
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   margin: 1rem 0;
 }
 
 .pricing p {
-  white-space: nowrap;
   color: var(--White);
+  white-space: nowrap;
 }
 
 .pricing p:last-of-type {
@@ -187,9 +189,9 @@ body {
 }
 
 .reset-section .btn {
-  text-transform: uppercase;
-  letter-spacing: 0.09rem;
   background-color: var(--Strong-cyan);
+  letter-spacing: 0.09rem;
+  text-transform: uppercase;
 }
 
 .btn:hover {
@@ -202,12 +204,12 @@ body {
 }
 
 /* media query */
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 50rem) {
   .sections {
+    border-radius: 0.7rem;
     display: flex;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-radius: 0.7rem;
     margin: 4rem 0;
     max-width: 80rem;
     transition: var(--transition);
@@ -232,16 +234,16 @@ body {
 
 /* footer styles */
 .my-profile {
+  align-items: center;
   background-color: var(--Very-dark-cyan);
   color: white;
+  display: flex;
   font-size: 14px;
+  gap: 20px;
+  justify-content: center;
   padding: 10px;
   text-align: center;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 
 .my-profile > a {
@@ -257,7 +259,7 @@ body {
   margin: 0 5px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 45rem) {
   .my-profile {
     font-size: 12px;
   }
@@ -265,5 +267,12 @@ body {
   .my-profile-icons a:first-of-type,
   .my-profile-icons a:last-of-type {
     display: none;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .my-profile {
+    position: fixed;
+    bottom: 0;
   }
 }

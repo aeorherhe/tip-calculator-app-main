@@ -41,15 +41,20 @@
               <button class="btn"><span class="tip-percent">15</span>%</button>
               <button class="btn"><span class="tip-percent">25</span>%</button>
               <button class="btn"><span class="tip-percent">50</span>%</button>
-              <input
-                type="text"
-                inputmode="numeric"
-                name="custom"
-                id="custom"
-                class="custom-btn input"
-                placeholder="Custom"
-                maxlength="5"
-              />
+              <form action="/" class="form-group custom-form">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  name="custom"
+                  id="custom"
+                  class="custom-btn input custom"
+                  placeholder="Custom"
+                  maxlength="5"
+                />
+                <label for="custom" class="custom-label">
+                  <small class="error-msg"></small>
+                </label>
+              </form>
             </div>
             <form action="/" class="form-group">
               <label for="persons" class="persons-label">
