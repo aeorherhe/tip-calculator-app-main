@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <header class="header">
+          <img src="./images/logo.svg" class="logo" alt="" />
+        </header>
+        <div class="sections">
+          <section class="tips-section">
+            <form action="/" class="form-group">
+              <label for="bill" class="bill-label">
+                <p>Bill</p>
+                <small class="error-msg"></small>
+              </label>
+              <input
+                type="text"
+                inputmode="numeric"
+                name="bill"
+                class="input bill"
+                id="bill"
+                maxlength="9"
+              />
+              <img src="./images/icon-dollar.svg" class="icon-dollar" alt="" />
+            </form>
+            <p>Select Tip</p>
+            <div class="tips">
+              <button class="btn"><span class="tip-percent">5</span>%</button>
+              <button class="btn"><span class="tip-percent">10</span>%</button>
+              <button class="btn"><span class="tip-percent">15</span>%</button>
+              <button class="btn"><span class="tip-percent">25</span>%</button>
+              <button class="btn"><span class="tip-percent">50</span>%</button>
+              <input
+                type="text"
+                inputmode="numeric"
+                name="custom"
+                id="custom"
+                class="custom-btn input"
+                placeholder="Custom"
+                maxlength="5"
+              />
+            </div>
+            <form action="/" class="form-group">
+              <label for="persons" class="persons-label">
+                <p>Number of people</p>
+                <small class="error-msg"></small>
+              </label>
+              <input
+                type="text"
+                inputmode="numeric"
+                name="persons"
+                class="input persons"
+                id="persons"
+                value="1"
+                maxlength="3"
+              />
+              <img src="./images/icon-person.svg" class="icon-person" alt="" />
+            </form>
+          </section>
+          <section class="reset-section">
+            <div class="pricing">
+              <div>
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <h1 class="price">$<span class="tip-amount">0.00</span></h1>
+            </div>
+            <div class="pricing">
+              <div>
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <h1 class="price">$<span class="total-price">0.00</span></h1>
+            </div>
+            <button type="reset" class="btn reset-btn">reset</button>
+          </section>
+        </div>
+      </div>
+    </main>
+    <my-profile class="my-profile">
+      Challenge by :
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor....
+      </a>
+      Coded by :
+      <a href="https://aeorherhe.netlify.app" target="_blank"
+        >Abraham Orherhe</a
+      >
+      <div class="my-profile-icons">
+        <a href="https://www.facebook.com/aeorherhe" target="_blank"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/aeorherhe/" target="_blank"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="https://twitter.com/aeorherhe" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+    </my-profile>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
