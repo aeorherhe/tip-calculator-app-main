@@ -18,8 +18,8 @@ let customTip = 0.0;
 // handle bill input
 bill.addEventListener("input", () => {
   billAmount = Number(bill.value);
-  validateInput(bill, 0);
   calcTip();
+  validateInput(bill, 0);
 });
 
 // select tip percent
@@ -41,16 +41,16 @@ tipBtns.forEach(function (tipBtn) {
     tipBtn.classList.remove("selected");
     customTip = Number(custom.value);
     customTip = customTip / 100;
-    validateInput(custom, 1);
     calcTip();
+    validateInput(custom, 1);
   });
 });
 
 // handle input event for no of people
 persons.addEventListener("input", () => {
   totalPersons = Number(persons.value);
-  validateInput(persons, 2);
   calcTip();
+  validateInput(persons, 2);
 });
 
 // Validate inputs
@@ -64,12 +64,15 @@ function validateInput(event, index) {
   } else if (!Number(event.value)) {
     event.classList.add("invalid");
     formGroup[index].textContent = "Invalid input, numbers only";
+    totalTipAmount.textContent = 0.0;
+    totalPrice.textContent = 0.0;
   }
 }
 
 // calculate tip
 function calcTip() {
   if (totalPersons >= 1) {
+    validateInput(bill, 0);
     let tipAmountCalc = (billAmount * customTip) / totalPersons;
     totalTipAmount.textContent = tipAmountCalc.toFixed(2);
     totalPrice.textContent = (
